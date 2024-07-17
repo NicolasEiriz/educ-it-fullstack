@@ -1,0 +1,40 @@
+
+
+1. git init => inicia un repositorio local, una sola vez (copia todo lo que tengo en el directorio donde lo inicio)
+
+2. U => sin seguimiento: no están guardados en el repositorio local
+
+3. git add => agrega todos los datos al repositorio local
+
+  - git add index.html => agregar el archivo al repositorio local, agregando el nombre del archivo
+
+  - git add . => agrega todo el directorio donde estamos trabajando
+
+
+4. A => archivo agregado al repositorio local
+
+5. M => el archivo fur modificado, pero no guardado
+
+6. git commit => embalar el paquete de archivos para enviarlo
+
+    -m => comentar o describir la tarea realizada
+
+    - Ej. git commit -m "Saludos"
+
+7. Si tocamos algo, volvemos a iniciar, menos el número 1.
+
+8. git status => consulta el estado de GIT
+
+9. Git no guarda directorios vacío por default
+
+10. git remote -v => me muestra dónde están guardados los códigos en remoto
+
+11. git log => me muestra los commits hechos y quien lo hizo
+
+12. Creamos un repo en GitHub
+
+13. Agregamos la url del repo remoto al Git local git remote add origin https://elreporemoto.git
+
+14. Enviamos el repo con git push origin master
+
+15. git log --oneline => me muestra los commits en una sóla línea resumidas

@@ -46,12 +46,15 @@ function establecerAtributo(personaje){
 
 function preguntarPersonaje(){
     
-    verificarPersonajeMostrado()
     nombrePersonaje = prompt('¿Quién se presenta hoy? (Mario, Luigi, Bowser, Peach, Yoshi, Toad, Toadette, Daisy)')
-
+    
     console.log(nombrePersonaje)
 
+    chequearPersonajeVisible()
+
     elegirPersonaje()
+    
+    
 
     //ocultarBoton()
 }
@@ -60,11 +63,25 @@ function ocultarBoton(){
     botonPresentar.style.display = 'none'
 }
 
-function verificarPersonajeMostrado(){
-    let personajes = document.querySelectorAll('.cajas > div')
-}
+
 
 let botonPresentar = document.querySelector('#presentar')
 
 botonPresentar.addEventListener('click', preguntarPersonaje)
 
+//1) Quitar el comportamiento de que el botón creado se oculte luego de ser presionado, que se había solicitado en el punto anterior. Dejarlo visible en todo momento, incluso luego de ser presionado, manteniendo su comportamiento de mostrar el prompt y presentar al presonaje solicitado, de modo tal que cada vez que sea presionado pregunte otro nombre con un prompt y presente a otro personaje, pero ocultando el último personaje que se mostró, de tal manera que solo habrá un personaje visible a la vez, pero con cada presión sobre el botón se podrá cambiar de personaje, siempre y cuando el usuario haya ingresado un nombre válido, en caso contrario, se mantendrá visible el personaje visible actualmente, si es que hay uno.
+
+function chequearPersonajeVisible(personajeElegido){
+
+
+    if(personajeElegido !== 'Mario' || personajeElegido !== 'Luigi' || personajeElegido !== 'Bowser' || personajeElegido !== 'Peach' || personajeElegido !== 'Yoshi' || personajeElegido !== 'Toad' || personajeElegido !== 'Toadette' || personajeElegido !== 'Daisy'){
+        return}
+
+    let listaPersonajes = document.querySelectorAll('.personaje')
+
+        listaPersonajes.forEach((personaje)=>{
+            if(personaje.hasAttribute('title')){
+                personaje.toggleAttribute('title')
+        }
+    })
+}
